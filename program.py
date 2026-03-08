@@ -29,3 +29,10 @@ model.add(x[(0,3)] + x[(1,3)] + x[(2,3)] == 25)
 
 solver = cp_model.CpSolver()
 status = solver.solve(model)
+
+if status == cp_model.OPTIMAL:
+    for r in range(3):
+        row = []
+        for c in range(4):
+            row.append(solver.Value(x[(r,c)]))
+        print(row)
