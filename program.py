@@ -26,3 +26,6 @@ model.add(x[(0,0)] + x[(1,0)] + x[(2,0)] == 27)
 model.add(x[(0,1)] + x[(1,1)] + x[(2,1)] == 16)
 model.add(x[(0,2)] + x[(1,2)] + x[(2,2)] == 10)
 model.add(x[(0,3)] + x[(1,3)] + x[(2,3)] == 25)
+
+solver = cp_model.CpSolver()
+status = solver.solve(model)
